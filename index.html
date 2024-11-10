@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN TEORI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #4e4e4e;
+            background-color: #FAF4E1;
+            margin: 20px;
+            transition: all 0.5s;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #8B5E3C;
+        }
+        h3 {
+            cursor: pointer;
+            color: #4E4E4E;
+            margin-top: 20px;
+            position: relative;
+            padding-right: 20px;
+        }
+        h3::after {
+            content: '\25B6'; /* Triangel kanan */
+            position: absolute;
+            right: 0;
+            transition: transform 0.3s;
+        }
+        .active::after {
+            transform: rotate(90deg); /* Triangel turun */
+        }
+        .content {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #7a4b05;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .content.show {
+            max-height: 1000px; /* Nilai besar untuk memastikan konten terbuka */
+            padding: 15px;
+        }
+        /* Mode Tampilan Berantakan */
+        .messy-mode {
+            font-family: "Comic Sans MS", cursive;
+            color: #ff69b4;
+            background-color: #ffe4e1;
+        }
+        .messy-mode h1, .messy-mode h2 {
+            color: #FFB6C1;
+            text-align: left;
+        }
+        .messy-mode h3 {
+            color: #FF6347;
+        }
+        .messy-mode h3::after {
+            content: '\25B6';
+            position: absolute;
+            right: 0;
+            transition: transform 0.3s;
+        }
+        .messy-mode h3.active::after {
+            transform: rotate(90deg);
+        }
+        .messy-mode .content {
+            padding: 5px;
+            border: 2px dotted #8B0000;
+            background-color: #FFE4E1;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .messy-mode .content.show {
+            max-height: 1000px;
+            padding: 5px;
+        }
+        /* Tombol Ganti Mode */
+        .toggle-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #507DBC;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #e41b68;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Judul dan Sub Judul -->
+    <h1>LAPORAN TEORI</h1>
+    <h2>Nama: Cindy Ayumi Siahaan | NIM: 202331043</h2>
+    
+    <!-- Tombol Ganti Mode -->
+    <button class="toggle-button" onclick="toggleMode()">Ganti Mode Tampilan</button>
+
+    <!-- Pertanyaan dan Jawaban -->
+    <div class="content-wrapper">
+        <div class="content-section">
+            <h3 onclick="toggleContent(this)">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+            <div class="content">
+                <p>CSS memungkinkan pengembangan web untuk mengatur format, warna, ukuran, jarak, dan tampilan elemen-elemen HTML tanpa perlu mengubah struktur HTML itu sendiri
+                    JavaScript memungkinkan pengembangan web mereka yang akan dijalankan oleh web browser ketika halaman tersebut dimuat atau saat interaksi tertentu terjadi. 
+                    </p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h3 onclick="toggleContent(this)">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+            <div class="content">
+                <p>Kode CSS dapat diimplementasikan dalam tiga cara</p>
+                    <p>1. Inline adalah istilah yang digunakan saat Anda menulis kode CSS dalam    
+                        atribut style dari elemen HTML mana pun misalnya <code>&lt;<p style="color:skyblue;">&gt;</code> 
+                        Halo dunia!</p>
+                    <p>2. CSS internal diimplementasikan dalam elemen kepala halaman web Anda.                    
+                                misalnya <code>&lt;head&gt;</code><code>&lt; style &gt;</code>p{warna:hijau muda;warna latar:hitam;}<code>&lt;/style &gt;</code><code>&lt;/head&gt;</code></p>
+                    <p>3.  Implementasi CSS eksternal dilakukan dengan membuat file CSS terpisah di              
+                                ruang kerja Anda dan kemudian menautkannya di setiap halaman web yang Anda buat.
+                                Misalnya <code>&lt;head&gt;</code><code>&lt;link rel="text/css" href="your_CSS_file_location"/&gt;</code><code>&lt;/head&gt;</code></p>
+                    <p><b>JavaScript</b> dapat diintegrasikan ke dalam pemrograman web dengan cara menambahkan                            
+                                tag script di dalam tag body atau head pada HTML. JavaScript juga dapat  
+                                diintegrasikan dengan CSS dan HTML untuk menggabungkan logika pemrograman, 
+                                tampilan gaya, dan struktur halaman dalam satu aplikasi web.</p> 
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h3 onclick="toggleContent(this)">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+            <div class="content">
+                <p><b>JavaScript</b></p>
+                    <p>1.Membuat situs web lebih hidup. JavaScript dapat menambahkan interaksi dan fungsi ke          
+                       situs web.</p> 
+                    <p>2.Beban server lebih ringan. JavaScript bekerja secara non-blocking, sehingga prosesnya 
+                       tidak akan berhenti satu proses saja.</p> 
+                    <p>3.Mudah dipelajari. JavaScript memiliki sintaks yang sederhana dan singkat.</p>  
+                <p><b>CSS</b></p>
+                    <p>1.Fleksibel digunakan.</p>  
+                    <p>2.Ukuran file CSS cenderung kecil sehingga bandwidth yang dibutuhkan juga kecil.</p>  
+                    <p>3.Dokumen CSS dapat dipisah dengan dokumen HTML sehingga memudahkan pembuat   
+                       website dalam mengubah atau mengedit file CSS.</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h3 onclick="toggleContent(this)">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+            <div class="content">
+                <p>Keuntungan menggunakan Bootstrap adalah menggunakan sebuah inovasi CSS dan Html yang sederhana dan mudah digunakan</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h3 onclick="toggleContent(this)">5. Berikan salah satu contoh penggunaan Bootstrap lalu jelaskan apa fungsinya serta berikan screenshot hasil running di web-nya!</h3>
+            <div class="content">
+                <p><img src="contoh.png" alt="output" width="200px"><img src="soal5.png" alt="codingan" width="200px"></p>
+                <p>fungsi Bootstrap yang terlihat dalam halaman tersebut:</p>
+                    <p><b>1.   Container Layout</b></p> 
+                    <p>Fungsi dari kelas .container pada Bootstrap adalah untuk mengatur lebar konten agar berada di tengah halaman dan memberikan margin otomatis di sisi kiri dan kanan. Ini membantu tampilan terlihat lebih rapi dan terstruktur, dengan konten yang terpusat pada layar.Pada gambar, kita bisa melihat bahwa elemen-elemen seperti judul (“BLACK GOOSE BISTRO”) dan bagian-bagian lainnya (seperti “The Restaurant”, “Catering”, “Location and Hours”) disusun dengan jarak tepi (margin) yang seragam, memberikan tampilan yang rapi dan terfokus.</p>
+	                <p><b>2.   Typography yang Konsisten</b></p> 
+	                <p>Meskipun kode ini menggunakan beberapa gaya khusus di dalam tag style, Bootstrap tetap menyediakan font default dan tata letak untuk elemen-elemen HTML. Kelas container di Bootstrap secara otomatis memberikan spasi yang baik di sekitar teks, membuat elemen-elemen terlihat lebih profesional dan mudah dibaca.Pada output gambar, teks terlihat memiliki ukuran font dan spasi yang seragam, membantu memastikan keterbacaan yang baik.</p>
+                    <p><b>3.	Responsivitas</b></p> 
+	                <p>Bootstrap mengatur agar .container memiliki tata letak yang responsif. Artinya, pada layar yang lebih kecil (seperti pada perangkat seluler), .container akan menyesuaikan lebarnya agar konten tetap terlihat baik tanpa perlu menggulir secara horizontal. Hal ini membantu halaman tetap nyaman dilihat di berbagai ukuran layar.Meskipun tidak terlihat dalam gambar, jika diakses dari perangkat seluler, konten ini akan tetap berada di tengah dan terlihat rapi tanpa perlu penyesuaian tambahan.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mengubah antara mode rapi dan berantakan
+        function toggleMode() {
+            document.body.classList.toggle("messy-mode");
+        }
+
+        // Fungsi untuk menyembunyikan atau menampilkan konten pada sub-judul
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            const isShowing = content.classList.contains("show");
+            
+            if (isShowing) {
+                // Menanyakan konfirmasi untuk menyembunyikan
+                const confirmHide = confirm("Apakah Anda yakin ingin menyembunyikan konten ini?");
+                if (confirmHide) {
+                    content.classList.remove("show");
+                    element.classList.remove("active");
+                }
+            } else {
+                content.classList.add("show");
+                element.classList.add("active");
+            }
+        }
+    </script>
+
+</body>
+</html>
